@@ -4,7 +4,6 @@ from pylsl import StreamInfo, StreamOutlet
 
 # import files
 from balltracking import Ball
-from faceDetector import faceDetector
 from gazeBehaviour import gazeBehaviour
 
 # import necessary libraries

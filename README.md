@@ -7,10 +7,11 @@ Software for Identifying from Gaze Fixations the Recognized Object or Face
 3. labstreaminglayer
 4. yarp
 5. pupil with zmq plugin
-6. pupil with pupil remote and frame publisher activated
-7. pupil-stream-lsl project (other repository)
-8. check the requirements of the pupil-stream-lsl 
-9. check that pupil-stream-lsl has the correct threads activated
+6. pupil LSL plugin  
+7. pupil with pupil remote and frame publisher activated
+8. pupil-stream-lsl project (other repository)
+9. check the requirements of the pupil-stream-lsl 
+10. check that pupil-stream-lsl has the correct threads activated
 
 ## if you find this problem when using codeblocks 
 - pthread_create@2.25 
@@ -22,3 +23,8 @@ The solution is to add the thread library to both the compiler and linker
 - source: http://forums.codeblocks.org/index.php?topic=18661.0 
 - e.g. project->Build options...->Search directories->Linker and add the directory there
 - ../../../../middleware/yarp/build/lib
+
+## where to find Pupil LSL Relay Plugin
+- https://github.com/labstreaminglayer/App-PupilLabs/releases/tag/v1.0
+- https://github.com/labstreaminglayer/App-PupilLabs/tree/b921ee217888812dce2abe8defc7c0b12db33e8c/pupil_capture
+### Apparently there is a 2nd version! (you should check it out)

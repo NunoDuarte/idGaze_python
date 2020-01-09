@@ -14,3 +14,9 @@ Software for Identifying from Gaze Fixations the Recognized Object or Face
 - pthread_create@2.25 
 The solution is to add the thread library to both the compiler and linker 
 - source: https://askubuntu.com/questions/568068/multithreading-in-codeblocks
+
+## issue with not recognizing libYARP_init.so.3 even though it recognizes libYARP_init.so
+- quick workaround is to add the path to the yarp libs to the Search directories -> Linker 
+- source: http://forums.codeblocks.org/index.php?topic=18661.0 
+- e.g. project->Build options...->Search directories->Linker and add the directory there
+- ../../../../middleware/yarp/build/lib

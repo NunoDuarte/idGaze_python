@@ -7,7 +7,7 @@ Software for Identifying from Gaze Fixations the Recognized Object or Face
 3. labstreaminglayer
 4. yarp
 5. pupil with zmq plugin
-6. pupil LSL plugin  
+6. pupil LSL plugin (**pupil_lsl_relay.py**)
 7. pupil with pupil remote and frame publisher activated
 8. pupil-stream-lsl project (other repository)
 9. check the requirements of the pupil-stream-lsl 

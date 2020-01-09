@@ -7,8 +7,10 @@ Software for Identifying from Gaze Fixations the Recognized Object or Face
 3. labstreaminglayer
 4. yarp
 5. pupil with zmq plugin
-6. pupil-stream-lsl project (other repository)
-7. check the requirements of the pupil-stream-lsl 
+6. pupil with pupil remote and frame publisher activated
+7. pupil-stream-lsl project (other repository)
+8. check the requirements of the pupil-stream-lsl 
+9. check that pupil-stream-lsl has the correct threads activated
 
 ## if you find this problem when using codeblocks 
 - pthread_create@2.25 

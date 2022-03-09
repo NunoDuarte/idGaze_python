@@ -4,7 +4,7 @@
 import warnings
 warnings.simplefilter(action='ignore', category=FutureWarning)
 
-from ball_tracking import Ball
+from object_tracking import Color
 # from face_detector import FaceDetector as Face
 from face_detector_gpu import FaceGPU as Face
 from gaze_behaviour import GazeBehaviour
@@ -30,7 +30,7 @@ def findNearest(array, value):
 # initialize packages
 #lsl = LSL()
 faceTracking = Face()
-ballTracking = Ball()
+objtTracking = Color()
 gazeTracking = GazeBehaviour()
 
 folder = '/home/nduarte/software/pupil/recordings/2021_06_24/004/exports/'
@@ -73,8 +73,9 @@ with faceTracking.detection_graph.as_default():
             if frame is not None:
                 frame = imutils.resize(frame) #, width=600)
                 height, width, channels = frame.shape
+                
                 # object (color) detection          [G, R, B, Y, C]
-                ball = ballTracking.tracking(frame, [0, 1, 0, 0, 1])
+                objts = objtTracking.tracking(frame, [0, 1, 0, 0, 1])
 
                 # iCub face
                 face = faceTracking.detect(frame, sess)
@@ -90,10 +91,10 @@ with faceTracking.detection_graph.as_default():
                 sample[0][2] = norm_pos_y[ind]
                 if sample.any():
                     # push to yarp port
-                    gazeTracking.push(frame, sample, ball, face, width, height, [])
+                    gazeTracking.push(frame, sample, objts, face, width, height, [])
 
                 # clear buffer of object for new frame
-                ballTracking.ball_all = []
+                objtTracking.all_objts = []
 
                 cv2.imshow('frame', frame)
                 # write the flipped frame

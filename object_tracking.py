@@ -2,10 +2,10 @@ import numpy as np
 import cv2
 
 
-class Ball:
+class Color:
 
     def __init__(self):
-        self.ball_all = []
+        self.all_objts = []
 
     def tracking(self, frame, vector):
         if vector[0]:

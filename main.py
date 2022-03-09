@@ -4,7 +4,7 @@
 import warnings
 warnings.simplefilter(action='ignore', category=FutureWarning)
 
-from ball_tracking import Ball
+from object_tracking import Color
 # from face_detector import FaceDetector as Face
 from face_detector_gpu import FaceGPU as Face
 from gaze_behaviour import GazeBehaviour
@@ -21,7 +21,7 @@ import imutils
 # initialize packages
 lsl = LSL()
 faceTracking = Face()
-ballTracking = Ball()
+objtTracking = Color()
 gazeTracking = GazeBehaviour(lsl.outlet)
 
 # A window will open. To close, press 'q'.
@@ -39,7 +39,7 @@ with faceTracking.detection_graph.as_default():
                     height, width, channels = frame.shape
 
                     # object (color) detection          [G, R, B, Y, C]
-                    ball = ballTracking.tracking(frame, [1, 1, 1, 0, 1])
+                    objts = objtTracking.tracking(frame, [1, 1, 1, 0, 1])
 
                     # iCub face
                     face = None
@@ -50,10 +50,10 @@ with faceTracking.detection_graph.as_default():
                     sample, timestamp = lsl.inlet.pull_chunk()
                     if sample:
                         # push to yarp port
-                        gazeTracking.push(frame, sample, ball, face, width, height, lsl)
+                        gazeTracking.push(frame, sample, objts, face, width, height, lsl)
 
                     # clear buffer of object for new frame
-                    ballTracking.ball_all = []
+                    objtTracking.all_objts = []
 
                 cv2.imshow('frame', frame)
             i = i + 1

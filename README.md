@@ -24,7 +24,7 @@ So you need to get the [icub-face-detection](https://github.com/NunoDuarte/icub-
 4. import utils
 
 ## Installation 
-###  to import utils you need to install tensorflow with gpu then get the models of tensorflow for object recognition to recognize the import 
+to import **utils** you need to install tensorflow with gpu then get the models of tensorflow for object recognition to recognize the import 
 ```
 from utils import label_map_util
 from utils import visualization_utils as vis_util

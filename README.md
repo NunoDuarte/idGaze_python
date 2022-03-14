@@ -7,9 +7,14 @@ So you need to get the [icub-face-detection](https://github.com/NunoDuarte/icub-
 
 # Table of Contents
 
+- [Instructions](#instructions)
 - [Dependencies](#dependencies)
 - [Installation](#installation)
 - [Possible Issues](#issues)
+
+## Instructions
+1. main.py runs the software connected to the PupilLabs eye-tracker using LSL
+2. main_offline.py runs the software for a video (.mp4) 
 
 ## Dependencies
 - There are two conda virtual environments which were tested and was running (**pupilos** and **pupilos-10**). Pupilos was working for tensorflow 1.9 and CUDA-8.0 and pupilos-10 was working for tensorflow 2.7 and CUDA-11.2
@@ -19,7 +24,7 @@ So you need to get the [icub-face-detection](https://github.com/NunoDuarte/icub-
 4. import utils
 
 ## Installation 
-###  to import utils you need to install tensorflow with gpu then get the models of tensorflow for object recognition to recognize the import 
+to import **utils** you need to install tensorflow with gpu then get the models of tensorflow for object recognition to recognize the import 
 ```
 from utils import label_map_util
 from utils import visualization_utils as vis_util

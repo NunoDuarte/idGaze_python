@@ -1,4 +1,4 @@
-# activate anaconda environment:export PATH="/home/nduarte/anaconda3/bin:$PATH" && source activate pupilos
+# activate anaconda environment:export PATH="/home/nduarte/anaconda3/bin:$PATH" && source activate pupilos || puupilos-10
 # python3 main.py --buffer 68
 
 import warnings

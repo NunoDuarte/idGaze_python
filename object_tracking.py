@@ -19,7 +19,7 @@ class Color:
         if vector[4]:
             self.cyan(frame)
 
-        return self.ball_all
+        return self.all_objts
 
     def cyan(self, frame):
         ball = []
@@ -58,7 +58,7 @@ class Color:
                 ball.append([int(x), int(y)])
 
         if ball is not [] and len(ball) != 0:
-            self.ball_all.append([ball, 5])
+            self.all_objts.append([ball, 5])
 
         return frame, ball
 
@@ -98,7 +98,7 @@ class Color:
                 ball.append([int(x), int(y)])
 
         if ball is not [] and len(ball) != 0:
-            self.ball_all.append([ball, 4])
+            self.all_objts.append([ball, 4])
 
         return frame, ball
 
@@ -138,7 +138,7 @@ class Color:
                 ball.append([int(x), int(y)])
 
         if ball is not [] and len(ball) != 0:
-            self.ball_all.append([ball, 1])  # 2 # 1 in ESN   # 3 in GazeDialogue
+            self.all_objts.append([ball, 1])  # 2 # 1 in ESN   # 3 in GazeDialogue
 
         return frame, ball
 
@@ -170,7 +170,7 @@ class Color:
                 ball.append([int(x), int(y)])
 
         if ball is not [] and len(ball) != 0:
-            self.ball_all.append([ball, 1])  # 3
+            self.all_objts.append([ball, 1])  # 3
 
         return frame, ball
 
@@ -207,7 +207,7 @@ class Color:
                 ball.append([int(x), int(y)])
 
         if ball is not [] and len(ball) != 0:
-            self.ball_all.append([ball, 1])  # 1 # 5 in ESN
+            self.all_objts.append([ball, 1])  # 1 # 5 in ESN
 
         return frame, ball
 

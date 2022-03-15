@@ -1,27 +1,22 @@
 # activate anaconda environment:export PATH="/home/nduarte/anaconda3/bin:$PATH" && source activate pupilos
 # python3 main.py --buffer 68
 
-import warnings
-warnings.simplefilter(action='ignore', category=FutureWarning)
-import sys
-sys.path.insert(1, 'src/')
-
-
-from objects.object_tracking import Color
-# from faces.face_detector import FaceDetector as Face
-from faces.face_detector_gpu import FaceGPU as Face
-from gaze.gaze_behaviour import GazeBehaviour
-from network.pupil_lsl_yarp import LSL
-
-#import tensorflow as tf
-import tensorflow.compat.v1 as tf
-tf.disable_v2_behavior()
-
 import numpy as np
 import cv2
 import imutils
 import csv
 import math
+import warnings
+import sys
+import tensorflow.compat.v1 as tf # import tensorflow version 1
+tf.disable_v2_behavior()
+warnings.simplefilter(action='ignore', category=FutureWarning)
+sys.path.insert(1, 'src/')
+
+from objects.object_tracking import Color
+# from faces.face_detector import FaceDetector as Face
+from faces.face_detector_gpu import FaceGPU as Face
+from gaze.gaze_behaviour import GazeBehaviour
 
 def findNearest(array, value):
     idx = np.searchsorted(array, value, side="left")
@@ -31,43 +26,34 @@ def findNearest(array, value):
         return array[idx], idx
 
 # initialize packages
-#lsl = LSL()
 faceTracking = Face()
 objtTracking = Color()
 gazeTracking = GazeBehaviour()
 
+# load test example
 folder = 'test/'
 filename = '000'
-cap = cv2.VideoCapture(folder+filename+'/world_viz.mp4')
+cap = cv2.VideoCapture(folder + filename + '/world_viz.mp4')
 length = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
-
 width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH) + 0.5) # 600
 height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT) + 0.5) # 337
-size = (width, height)
 fourcc = cv2.VideoWriter_fourcc(*'MJPG')
-out = cv2.VideoWriter(filename+ '.avi', fourcc, 30.0, size)
-
+out = cv2.VideoWriter(filename+ '.avi', fourcc, 30.0, (width, height))
 
 timestamps_gaze = list()
 norm_pos_x = list()
 norm_pos_y = list()
 
-with open(folder+filename+'/gaze_positions.csv', newline='') as csvfile:
+with open(folder + filename + '/gaze_positions.csv', newline='') as csvfile:
     reader = csv.DictReader(csvfile)
     for row in reader:
         timestamps_gaze.append(float(row['timestamp']))
         norm_pos_x.append(row['norm_pos_x'])
         norm_pos_y.append(row['norm_pos_y'])
-        # print(row['timestamp'], row['norm_pos_x'], row['norm_pos_y'])
-
-# print(timestamps_gaze[2])
-# print(norm_pos_y[2])      # dont forget it starts with 0
-# print(norm_pos_x[2])
 
 timestamps = np.load(folder+filename+'/world_viz_timestamps.npy')
 
 i = 0
-
 with faceTracking.detection_graph.as_default():
     with tf.Session(graph=faceTracking.detection_graph) as sess:
         while i < length:
@@ -93,7 +79,6 @@ with faceTracking.detection_graph.as_default():
                 sample[0][1] = norm_pos_x[ind]
                 sample[0][2] = norm_pos_y[ind]
                 if sample.any():
-                    # push to yarp port
                     gazeTracking.push(frame, sample, objts, face, width, height, [])
 
                 # clear buffer of object for new frame

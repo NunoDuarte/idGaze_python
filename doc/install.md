@@ -19,6 +19,6 @@ export PYTHONPATH=$PYTHONPATH:$(pwd):$(pwd)/object_detection
 10. pupil with zmq plugin
 11. pupil LSL plugin (**pupil_lsl_relay.py**)
 12. pupil with pupil remote and frame publisher activated
-13. connect lsl with pupil and yarp (follow the instructions on [LSL_Pupil_Yarp](doc/pupil_lsl.md))
+13. connect lsl with pupil and yarp (follow the instructions on [LSL_Pupil_Yarp](pupil_lsl.md))
 14. check the requirements of the pupil_lsl_yarp
 15. check that pupil_lsl_yarp has the correct threads activated

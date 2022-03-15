@@ -13,10 +13,10 @@ tf.disable_v2_behavior()
 warnings.simplefilter(action='ignore', category=FutureWarning)
 sys.path.insert(1, 'src/')
 
-from objects.object_tracking import Color
-# from faces.face_detector import FaceDetector as Face
-from faces.face_detector_gpu import FaceGPU as Face
-from gaze.gaze_behaviour import GazeBehaviour
+from object_tracking import Color
+# from face_detector import FaceDetector as Face
+from face_detector_gpu import FaceGPU as Face
+from gaze_behaviour import GazeBehaviour
 
 def findNearest(array, value):
     idx = np.searchsorted(array, value, side="left")

@@ -13,8 +13,11 @@ So you need to get the [icub-face-detection](https://github.com/NunoDuarte/icub-
 - [Possible Issues](#issues)
 
 ## Instructions
-1. main.py runs the software connected to the PupilLabs eye-tracker using LSL
-2. main_offline.py runs the software for a video (.mp4) 
+### Running in [Online](doc/online.md) mode
+The software processes works in real-time by processing the information of the PupilLabs head-mpinted eye-tracker online and writting to a YARP port for communication with a humanoid robot (iCub). The whole process is interconnected by a LSL network. 
+
+### Running in [Offline](doc/offline.md) mode
+The software processes recorded data exported from the PupilLabs head-mounted eye-tracker. 
 
 ## Dependencies
 - There are two conda virtual environments which were tested and was running (**pupilos** and **pupilos-10**). Pupilos was working for tensorflow 1.9 and CUDA-8.0 and pupilos-10 was working for tensorflow 2.7 and CUDA-11.2

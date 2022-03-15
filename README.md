@@ -9,7 +9,7 @@ So you need to get the [icub-face-detection](https://github.com/NunoDuarte/icub-
 
 - [Instructions](#instructions)
 - [Dependencies](#dependencies)
-- [Installation](https://github.com/NunoDuarte/idGaze_python/blob/master/doc/install.md)
+- [Installation](doc/install.md)
 - [Possible Issues](#issues)
 
 ## Instructions

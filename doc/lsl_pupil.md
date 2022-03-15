@@ -28,9 +28,9 @@ export PYTHONPATH=$PYTHONPATH:$(pwd):$(pwd)/object_detection
 then the project should detect the utils (DO NOT install any other utils library)
 17. in CodeBlocks you probably will not be able to detect the appropriate libraries (yarp, lsl, json)
 18. implement the following in the "Build Options" of your project in CodeBlocks:
-![1st part](https://github.com/NunoDuarte/armCoupling_iCub/blob/master/lsl/images/IMG_2989.jpg)
-![2nd part](https://github.com/NunoDuarte/armCoupling_iCub/blob/master/lsl/images/IMG_2990.jpg)
-![3rd part](https://github.com/NunoDuarte/armCoupling_iCub/blob/master/lsl/images/IMG_2991.jpg)
+![1st part](lsl_depend1.jpg)
+![2nd part](lsl_depend2.jpg)
+![3rd part](lsl_depend3.jpg)
 
 19. after you do this it should work (if not, there is something wrong, good luck) -> check # Issues for help
 20. run main.cpp (check which functions are on: #define LSL_OT, LSL_PL1, LSL_PL1YRP, LSL_PL2 

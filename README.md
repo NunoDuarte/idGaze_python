@@ -17,9 +17,9 @@ So you need to get the [icub-face-detection](https://github.com/NunoDuarte/icub-
 The software processes works in real-time by processing the information of the PupilLabs head-mpinted eye-tracker online and writting to a YARP port for communication with a humanoid robot (iCub). The whole process is interconnected by a LSL network. 
 
 <figure>
-<img src="doc/HRI_Block_diagram.png" width="800" height="450" />
+<img src="doc/HRI_Block_diagram.png" width="700" height="450" />
   
-<figcaption align = "center"><b>Fig.1 - Diagram illustrating the connections between the different modules that make up the communication of the human eye gaze to the robot fixations. The first module is related to the software that acquires the data from the eye tracker - Capture by Pupil Labs. From this module we collect the 2D fixation point of the subject's gaze projected onto the world view camera on the eye tracker. The stream of the world view camera, together with 2D gaze fixations through LSL network, is sent to the VFOA algorithm module to track the relevant fixations.</b></figcaption>
+<figcaption align = "center"><b>Fig.1 - Diagram illustrating the connections between the different modules that make up the communication of the human eye gaze to the robot fixations. The first module is related to the software that acquires the data from the eye tracker - Capture by Pupil Labs. From this module we collect the 2D fixation point of the subject's gaze projected onto the world view camera on the eye tracker. The stream of the world view camera, together with 2D gaze fixations through LSL network, is sent to idGaze software module to track the relevant fixations.</b></figcaption>
 </figure>
 
 ### Running in [Offline](doc/offline.md) mode

@@ -25,6 +25,12 @@ The software processes works in real-time by processing the information of the P
 ### Running in [Offline](doc/offline.md) mode
 The software processes recorded data exported from the PupilLabs head-mounted eye-tracker. 
 
+<figure>
+<img src="doc/HCI_Block_diagram.png" width="600" height="350" />
+  
+<figcaption align = "center"><b>Fig.2 - Diagram illustrating the conversion from raw Pupil Labs data to labelled gaze fixations</b></figcaption>
+</figure>
+
 ## Dependencies
 - There are two conda virtual environments which were tested and was running (**pupilos** and **pupilos-10**). Pupilos was working for tensorflow 1.9 and CUDA-8.0 and pupilos-10 was working for tensorflow 2.7 and CUDA-11.2
 1. add anaconda

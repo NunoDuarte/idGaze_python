@@ -7,12 +7,13 @@ So you need to get the [icub-face-detection](https://github.com/NunoDuarte/icub-
 
 # Table of Contents
 
+- [Setup](#setup)
 - [Instructions](#instructions)
-- [Dependencies](#dependencies)
 - [Installation](doc/install.md)
+- [Dependencies](#dependencies)
 - [Possible Issues](#issues)
 
-## Instructions
+## Setup
 ### Running in [Online](doc/online.md) mode
 The software processes works in real-time by processing the information of the PupilLabs head-mpinted eye-tracker online and writting to a YARP port for communication with a humanoid robot (iCub). The whole process is interconnected by a LSL network. 
 
@@ -31,12 +32,29 @@ The software processes recorded data exported from the PupilLabs head-mounted ey
 <figcaption align = "center"><b>Fig.2 - Diagram illustrating the conversion from raw Pupil Labs data to labelled gaze fixations</b></figcaption>
 </figure>
 
-## Dependencies
+## Instructions
 - There are two conda virtual environments which were tested and was running (**pupilos** and **pupilos-10**). Pupilos was working for tensorflow 1.9 and CUDA-8.0 and pupilos-10 was working for tensorflow 2.7 and CUDA-11.2
 1. add anaconda
-2. source activate pupilos***
-3. tensorflow models - object detection
-4. import utils
+```
+source activate pupilos***
+```
+2. install tensorflow models - object detection
+3. add package utils (follow [dependencies](#dependencies))
+
+## Dependencies
+You need to use the following packages from utils:
+```
+from utils import label_map_util
+from utils import visualization_utils as vis_util
+```
+to import **utils** you need to install tensorflow with gpu then get the models of tensorflow for object recognition to recognize the import 
+you need the following (after you have followed the instructions on how to install tensorflow models)
+``` 
+cd software/tensorflow/models/research
+export PYTHONPATH=$PYTHONPATH:$(pwd)/slim
+echo $PYTHONPATH 
+export PYTHONPATH=$PYTHONPATH:$(pwd):$(pwd)/object_detection 
+```
 
 ## Issues
 If you find this problem when using codeblocks:

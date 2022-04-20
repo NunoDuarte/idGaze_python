@@ -3,7 +3,7 @@
 
 import numpy as np
 import cv2
-import imutils
+#import imutils
 import csv
 import math
 import warnings
@@ -60,9 +60,8 @@ with faceTracking.detection_graph.as_default():
             ret, frame = cap.read()
 
             if frame is not None:
-                frame = imutils.resize(frame) #, width=600)
                 height, width, channels = frame.shape
-                
+
                 # object (color) detection          [G, R, B, Y, C]
                 objts = objtTracking.tracking(frame, [0, 1, 0, 0, 1])
 

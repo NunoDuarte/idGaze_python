@@ -11,7 +11,7 @@ class FaceGPU:
 
     def __init__(self):
         # What model to download.
-        FOLDER_NAME = 'src/faces/icub_face'
+        FOLDER_NAME = 'src/faces/gpu/icub_face'
         MODEL_NAME = 'icub_graph'
         # Path to frozen detection graph. This is the actual model that is used for the object detection.
         PATH_TO_FROZEN_GRAPH = FOLDER_NAME + '/' + MODEL_NAME + '/frozen_inference_graph.pb'

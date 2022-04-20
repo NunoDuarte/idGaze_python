@@ -13,10 +13,10 @@ tf.disable_v2_behavior()
 warnings.simplefilter(action='ignore', category=FutureWarning)
 sys.path.insert(1, 'src/')
 
-from objects.object_tracking import Color
-# from faces.face_detector import FaceDetector as Face
-from faces.face_detector_gpu import FaceGPU as Face
-from gaze.gaze_behaviour import GazeBehaviour
+from object_tracking import Color
+# from face_detector import FaceDetector as Face
+from face_detector_gpu import FaceGPU as Face
+from gaze_behaviour import GazeBehaviour
 
 def findNearest(array, value):
     idx = np.searchsorted(array, value, side="left")
@@ -32,8 +32,7 @@ gazeTracking = GazeBehaviour()
 
 # load test example
 folder = 'test/'
-filename = '000'
-cap = cv2.VideoCapture(folder + filename + '/world_viz.mp4')
+cap = cv2.VideoCapture(folder + '/world_viz.mp4')
 length = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
 width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH) + 0.5) # 600
 height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT) + 0.5) # 337
@@ -44,14 +43,14 @@ timestamps_gaze = list()
 norm_pos_x = list()
 norm_pos_y = list()
 
-with open(folder + filename + '/gaze_positions.csv', newline='') as csvfile:
+with open(folder + '/gaze_positions.csv', newline='') as csvfile:
     reader = csv.DictReader(csvfile)
     for row in reader:
         timestamps_gaze.append(float(row['timestamp']))
         norm_pos_x.append(row['norm_pos_x'])
         norm_pos_y.append(row['norm_pos_y'])
 
-timestamps = np.load(folder+filename+'/world_viz_timestamps.npy')
+timestamps = np.load(folder + '/world_viz_timestamps.npy')
 
 i = 0
 with faceTracking.detection_graph.as_default():

@@ -6,11 +6,11 @@ warnings.simplefilter(action='ignore', category=FutureWarning)
 import sys
 sys.path.insert(1, 'src/')
 
-from objects.object_tracking import Color
-# from faces.face_detector import FaceDetector as Face
-from faces.face_detector_gpu import FaceGPU as Face
-from gaze.gaze_behaviour import GazeBehaviour
-from network.pupil_lsl_yarp import LSL
+from object_tracking import Color
+# from face_detector import FaceDetector as Face
+from face_detector_gpu import FaceGPU as Face
+from gaze_behaviour import GazeBehaviour
+from pupil_lsl_yarp import LSL
 
 #import tensorflow as tf
 import tensorflow.compat.v1 as tf

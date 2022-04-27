@@ -32,6 +32,7 @@ gazeTracking = GazeBehaviour()
 
 # load test example
 folder = 'test/'
+filename = '000'
 cap = cv2.VideoCapture(folder + '/world_viz.mp4')
 length = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
 width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH) + 0.5) # 600

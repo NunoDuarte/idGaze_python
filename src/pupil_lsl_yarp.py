@@ -44,8 +44,13 @@ class LSL:
         args = vars(ap.parse_args())
         self.pts = deque(maxlen=args["buffer"])
 
-        print("looking for an NormPose2IP stream...")
-        streams = resolve_stream('name', 'NormPose2IP')
+        # print("looking for an NormPose2IP stream...")
+        # streams = resolve_stream('name', 'NormPose2IP')
+        # # create an inlet to read from the stream
+        # self.inlet = StreamInlet(streams[0])
+
+        print("looking for an Gaze Python stream...")
+        streams = resolve_stream('name', 'Gaze Python Representation')
         # create an inlet to read from the stream
         self.inlet = StreamInlet(streams[0])
 

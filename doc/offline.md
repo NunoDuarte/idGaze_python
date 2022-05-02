@@ -1,6 +1,6 @@
 # Offline system
 
-The follwing files are part of the project:
+The following files are part of the project:
 - main_offline.py
 - object_tracking.py
 - face_tracking_gpu.py

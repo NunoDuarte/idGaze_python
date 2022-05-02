@@ -42,7 +42,7 @@ source activate pupilos***
 3. add package utils (follow [dependencies](#dependencies))
 
 ## Dependencies
-You need to use the following packages from utils:
+Tensorflow Object Detection Model - You need to use the following packages from utils:
 ```
 from utils import label_map_util
 from utils import visualization_utils as vis_util

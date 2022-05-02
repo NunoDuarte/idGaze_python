@@ -21,7 +21,7 @@ class GazeBehaviour:
                     mysample = [timestamp, ball[1], ball[0][0][0], ball[0][0][1], ]
                     return mysample
 
-            if face is not None:
+            if face is not None or []:
                 cX = face[1]*width
                 cY = face[0]*height
                 cW = face[3]*width

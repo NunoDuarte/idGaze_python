@@ -7,7 +7,7 @@ import argparse
 
 """
 Receive world camera data from Pupil using ZMQ.
-Make sure the frame publisher plugin is loaded and configuredsource  to gray or rgb
+Make sure the frame publisher plugin is loaded and configured to gray or rgb
 """
 
 

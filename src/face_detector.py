@@ -8,7 +8,7 @@ class FaceDetector:
 
     def __init__(self):
         self.subjects = ["", "iCub"]
-        self.eye_cascade = cv2.CascadeClassifier('haarcascade_eye.xml')
+        self.eye_cascade = cv2.CascadeClassifier('faces/cpu/haarcascade_eye.xml')
 
     def detecting(self, frame, anterior, faceCascade):
 

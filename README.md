@@ -40,6 +40,14 @@ source activate pupilos***
 ```
 2. install tensorflow models - object detection
 3. add package utils (follow [dependencies](#dependencies))
+4. run main.py
+```
+python3 main.py
+```
+or main_offline.py
+```
+python3 main_offline.py
+```
 
 ## Dependencies
 Tensorflow Object Detection Model - You need to use the following packages from utils:
